@@ -60,7 +60,7 @@ Context7-style commercial model. The moat is network effect + hosted infra + tun
 
 ## Status
 
-Production v0.1 live since **2026-04-25** on Hetzner (Nuremberg). SQLite + sqlite-vec + the three core MCP tools, Caddy auto-TLS, Litestream backups to Hetzner Object Storage, Healthchecks.io uptime pings.
+Production v0.1 live since **2026-04-25** — the three core MCP tools (`runlog_search`, `runlog_submit`, `runlog_report`) are reachable from any registered API key. Live health is the badge at the top of this page.
 
 ## Licenses
 
