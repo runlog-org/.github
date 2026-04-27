@@ -10,7 +10,7 @@
 [![Cross-vendor](https://img.shields.io/badge/agents-9%20vendors-blue)](https://github.com/runlog-org/runlog-skills)
 [![License](https://img.shields.io/badge/code-Apache%202.0%20%2F%20MIT-blue)](#licenses)
 
-[**API**](https://api.runlog.org) · [**Sign up**](https://runlog.org/register) · [**Docs**](https://github.com/runlog-org/runlog-docs) · [**MCP Skills**](https://github.com/runlog-org/runlog-skills)
+[**API**](https://api.runlog.org) · [**Sign up**](https://runlog.org/register) · [**MCP Skills**](https://github.com/runlog-org/runlog-skills) · [**Why verification**](https://runlog.org/why-verification/)
 
 </div>
 
@@ -20,21 +20,22 @@ Team-memory tools (Claude Code's `CLAUDE.md`, Cursor rules, mem0, Letta) own *wh
 
 **Runlog fills that blind spot.** It's a cross-org registry of verified knowledge about third-party systems — public APIs, published frameworks, standard protocols, open-source libraries — delivered as an MCP server that agents consult *alongside* their team memory, never as a replacement. Trust is earned through tracked real-world usage, not votes. **No humans in the loop for quality governance.**
 
-→ Start at [`runlog-docs/00-overview.md`](https://github.com/runlog-org/runlog-docs/blob/main/00-overview.md) for the problem statement and full doc map.
+→ The shortest path in: visit [runlog.org](https://runlog.org), grab an API key, and drop the right adapter from [`runlog-skills`](https://github.com/runlog-org/runlog-skills) into your agent.
 
 ## Repos
 
-The project lives across seven repos. The server is private; the rest are open source.
+The project lives across five public repos plus the private server and architectural docs.
 
 | Repo | What it is | License |
 |---|---|---|
-| 🔒 [`runlog`](https://github.com/runlog-org/runlog) | Commercial MCP server (private) | Proprietary |
-| 📚 [`runlog-docs`](https://github.com/runlog-org/runlog-docs) | Architectural docs every other repo links to | CC-BY-4.0 |
+| 🔒 [`runlog`](https://github.com/runlog-org/runlog) | Commercial MCP server | Private — proprietary |
 | 🔏 [`runlog-verifier`](https://github.com/runlog-org/runlog-verifier) | Signed verification agent (Go) | Apache-2.0 |
 | 📐 [`runlog-schema`](https://github.com/runlog-org/runlog-schema) | Submission, cassette & manifest schemas (YAML) | Apache-2.0 |
 | 📖 [`runlog-vocabularies`](https://github.com/runlog-org/runlog-vocabularies) | Allow-list data (stdlib, framework, protocol tokens) | CC-BY-SA-4.0 |
 | 🤝 [`runlog-skills`](https://github.com/runlog-org/runlog-skills) | MCP client skills for 9 vendor agent frameworks | MIT |
 | 🌐 [`runlog-website`](https://github.com/runlog-org/runlog-website) | Marketing & registration site (`runlog.org`) | MIT |
+
+Architectural design docs are kept private alongside the server.
 
 ## Try it
 
@@ -46,7 +47,7 @@ The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at
 2. New knowledge is **submitted** with a signed bundle from a verifier that runs both branches of the entry on the submitter's machine and applies mutation testing — tautological tests are rejected before signing.
 3. Trust is **computed** from usage telemetry and statistical failure correlation, **not voted**. Confidence decays automatically as upstream dependencies churn.
 
-The full design is in [`runlog-docs`](https://github.com/runlog-org/runlog-docs).
+A longer write-up of the verification model lives at [runlog.org/why-verification/](https://runlog.org/why-verification/).
 
 ## Pricing
 
@@ -67,5 +68,4 @@ Production v0.1 live since **2026-04-25** — the three core MCP tools (`runlog_
 - **Code** ([`runlog-verifier`](https://github.com/runlog-org/runlog-verifier), [`runlog-schema`](https://github.com/runlog-org/runlog-schema)) — Apache-2.0. Patent grant matters for trust-related infra.
 - **Adapters & marketing** ([`runlog-skills`](https://github.com/runlog-org/runlog-skills), [`runlog-website`](https://github.com/runlog-org/runlog-website)) — MIT.
 - **Data** ([`runlog-vocabularies`](https://github.com/runlog-org/runlog-vocabularies)) — CC-BY-SA-4.0. Copyleft on the data; derivatives must share alike.
-- **Documentation** ([`runlog-docs`](https://github.com/runlog-org/runlog-docs)) — CC-BY-4.0.
 - **Server** ([`runlog`](https://github.com/runlog-org/runlog)) — Proprietary. Will revisit AGPL-3.0 / BSL-1.1 before external code contributions.
