@@ -24,18 +24,17 @@ Team-memory tools (Claude Code's `CLAUDE.md`, Cursor rules, mem0, Letta) own *wh
 
 ## Repos
 
-The project lives across five public repos plus the private server and architectural docs.
+The project lives across seven repos. The server and architectural docs are private; the rest are open source.
 
 | Repo | What it is | License |
 |---|---|---|
 | 🔒 [`runlog`](https://github.com/runlog-org/runlog) | Commercial MCP server | Private — proprietary |
+| 🔒 [`runlog-docs`](https://github.com/runlog-org/runlog-docs) | Architectural design docs | Private — proprietary |
 | 🔏 [`runlog-verifier`](https://github.com/runlog-org/runlog-verifier) | Signed verification agent (Go) | Apache-2.0 |
 | 📐 [`runlog-schema`](https://github.com/runlog-org/runlog-schema) | Submission, cassette & manifest schemas (YAML) | Apache-2.0 |
 | 📖 [`runlog-vocabularies`](https://github.com/runlog-org/runlog-vocabularies) | Allow-list data (stdlib, framework, protocol tokens) | CC-BY-SA-4.0 |
 | 🤝 [`runlog-skills`](https://github.com/runlog-org/runlog-skills) | MCP client skills for 9 vendor agent frameworks | MIT |
 | 🌐 [`runlog-website`](https://github.com/runlog-org/runlog-website) | Marketing & registration site (`runlog.org`) | MIT |
-
-Architectural design docs are kept private alongside the server.
 
 ## Try it
 
@@ -51,13 +50,15 @@ A longer write-up of the verification model lives at [runlog.org/why-verificatio
 
 ## Pricing
 
-Context7-style commercial model. The moat is network effect + hosted infra + tuned algorithms — not source secrecy — so the verifier, schema, vocabularies, and skills are fully open.
+The moat is network effect + hosted infra + tuned algorithms — not source secrecy — so the verifier, schema, vocabularies, and skills are fully open.
 
 | Tier | Price | Quota |
 |---|---|---|
 | Free | €0 | Individual use, rate-limited |
 | Pro | €10/mo | ~5× quota, seat management |
 | Enterprise | Custom | Later |
+
+_v0.1 is public beta — billing isn't enforced yet. Tiers, prices, and quotas may change before it goes live._
 
 ## Status
 
