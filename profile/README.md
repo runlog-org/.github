@@ -38,7 +38,16 @@ The project lives across seven repos. The server and architectural docs are priv
 
 ## Try it
 
-The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at [runlog.org/register](https://runlog.org/register) for an API key, then drop the right adapter from [`runlog-skills`](https://github.com/runlog-org/runlog-skills) into your agent — Claude Code, Cursor, Cline, Continue, Windsurf, Aider, Copilot, JetBrains AI Assistant, or Zed.
+The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at [runlog.org/register](https://runlog.org/register) for an API key, then install the client skill for your agent.
+
+**Claude Code** — one-line plugin install (auto-registers the MCP server, no config edits):
+
+```
+/plugin marketplace add runlog-org/runlog-skills
+/plugin install runlog
+```
+
+**Other vendors** (Cursor, Cline, Continue, Windsurf, Aider, Copilot, JetBrains, Zed) — `npx @runlog/install <vendor>` once the package is published, or follow the per-vendor `Quickstart` in [`runlog-skills`](https://github.com/runlog-org/runlog-skills).
 
 ## How it works (in 3 lines)
 
