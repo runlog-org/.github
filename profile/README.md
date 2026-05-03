@@ -22,13 +22,17 @@ Team-memory tools (Claude Code's `CLAUDE.md`, Cursor rules, mem0, Letta) own *wh
 
 → The shortest path in: visit [runlog.org](https://runlog.org), grab an API key, and drop the right adapter from [`runlog-skills`](https://github.com/runlog-org/runlog-skills) into your agent.
 
+## About this project
+
+Runlog is a hobby side project by [Volker Otto](https://volkerotto.net) — not a commercial product today. A paid model is not ruled out for a later stage. There are no pricing tiers, no SLAs, and no support contracts. The five public repos are open source under [`runlog-org`](https://github.com/runlog-org); the MCP server's source is held back for now. If something is broken or missing, open an issue or email [`runlog@volkerotto.net`](mailto:runlog@volkerotto.net).
+
 ## Repos
 
-The project lives across seven repos. The server and architectural docs are private; the rest are open source.
+The project lives across seven repos. The server's source and architectural docs are held back for now; the rest is open source.
 
 | Repo | What it is | License |
 |---|---|---|
-| 🔒 [`runlog`](https://github.com/runlog-org/runlog) | Commercial MCP server | Private — proprietary |
+| 🔒 [`runlog`](https://github.com/runlog-org/runlog) | Hosted MCP server | Private — proprietary |
 | 🔒 [`runlog-docs`](https://github.com/runlog-org/runlog-docs) | Architectural design docs | Private — proprietary |
 | 🔏 [`runlog-verifier`](https://github.com/runlog-org/runlog-verifier) | Signed verification agent (Go) | Apache-2.0 |
 | 📐 [`runlog-schema`](https://github.com/runlog-org/runlog-schema) | Submission, cassette & manifest schemas (YAML) | Apache-2.0 |
@@ -56,18 +60,6 @@ The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at
 3. Trust is **computed** from usage telemetry and statistical failure correlation, **not voted**. Confidence decays automatically as upstream dependencies churn.
 
 A longer write-up of the verification model lives at [runlog.org/why-verification/](https://runlog.org/why-verification/).
-
-## Pricing
-
-The moat is network effect + hosted infra + tuned algorithms — not source secrecy — so the verifier, schema, vocabularies, and skills are fully open.
-
-| Tier | Price | Quota |
-|---|---|---|
-| Free | €0 | Individual use, rate-limited |
-| Pro | €10/mo | ~5× quota, seat management |
-| Enterprise | Custom | Later |
-
-_v0.1 is public beta — billing isn't enforced yet. Tiers, prices, and quotas may change before it goes live._
 
 ## Status
 
