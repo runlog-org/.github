@@ -10,7 +10,7 @@
 [![Cross-vendor](https://img.shields.io/badge/agents-9%20vendors-blue)](https://github.com/runlog-org/runlog-skills)
 [![License](https://img.shields.io/badge/code-Apache%202.0%20%2F%20MIT-blue)](#licenses)
 
-[**API**](https://api.runlog.org) · [**Sign up**](https://runlog.org/register) · [**MCP Skills**](https://github.com/runlog-org/runlog-skills) · [**Why verification**](https://runlog.org/why-verification/)
+[**API**](https://api.runlog.org) · [**Sign up**](https://runlog.org/register) · [**MCP Skills**](https://github.com/runlog-org/runlog-skills) · [**Why verification**](https://runlog.org/why-verification/) · [**Blog**](https://runlog.org/blog/)
 
 </div>
 
