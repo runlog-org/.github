@@ -113,17 +113,28 @@ recedes behind the others.
 | Numerals     | Tabular figures (`font-feature-settings: "tnum"`) for tables, prices, version strings | |
 
 Both families are **self-hosted** — no Google Fonts CDN, no third-party
-requests. Ship two weights each (400, 600) as `woff2`, served from the
-same origin. Use `font-display: swap` and preload the body weights:
+requests. Ship two weights each (400, 600) as `woff2`, latin subset
+(German diacritics covered by the latin-1 supplement block), served
+from the same origin under `/assets/fonts/`. All four `@font-face`
+rules use `font-display: swap`.
+
+Preload only the **always-rendered** weights (Inter 400 + 600). Mono
+fires only when `<pre>`/`<code>` enters the layout, so it lazy-loads
+via `@font-face`:
 
 ```html
 <link rel="preload" href="/assets/fonts/Inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Inter-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/JetBrainsMono-400.woff2" as="font" type="font/woff2" crossorigin>
 ```
 
-Subset to Latin + Latin-Extended (covers German for `impressum`/`datenschutz`).
-Total payload target ~80 KB across all four files.
+Total wire weight ≈ 91 KB across the four files (Inter 400 ~24 KB, Inter
+600 ~25 KB, JetBrains Mono 400 ~21 KB, 600 ~22 KB). Cached for one year
+via `Cache-Control: public, max-age=31536000, immutable` — bumping a
+font means renaming the file, not editing in place.
+
+Source: `@fontsource/inter@5` and `@fontsource/jetbrains-mono@5`,
+downloaded directly from `cdn.jsdelivr.net` (no npm dependency, files
+vendored into the repo).
 
 Scale (light theme):
 
