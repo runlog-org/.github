@@ -156,7 +156,10 @@ Scale (light theme):
 - **Borders:** 1px, `surface/hairline`. Avoid heavy borders; rely on hairlines + surface contrast.
 - **Shadows:** None on the website itself. Reserve for floating UI (tooltips, dropdowns) at `0 1px 2px rgba(14,17,22,0.06), 0 4px 12px rgba(14,17,22,0.04)`.
 - **Spacing:** 4-px base grid. Use the named scale, not raw values — picking `var(--space-6)` over `1.5rem` is what keeps surfaces aligned across pages.
-- **Content width:** prose `38rem`, page max `44rem` (mobile/tablet) → `56rem` (desktop, ≥60rem viewport). Marketing heroes may break out wider when needed.
+- **Content width:**
+  - **Mobile / tablet** (viewport < 60rem): page max `44rem`, `.prose` capped at `38rem` for comfortable line length.
+  - **Desktop** (viewport ≥ 60rem): page max `56rem`, `.prose` fills the page — no separate prose cap. The wider container *is* the line-length budget.
+  - Marketing heroes may pin tighter via inline `max-width` (e.g. the homepage hero stays at `36rem`).
 
 Spacing scale (CSS custom properties, all in `rem`):
 
