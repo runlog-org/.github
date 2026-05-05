@@ -16,15 +16,15 @@
 
 ---
 
-Team-memory tools (Claude Code's `CLAUDE.md`, Cursor rules, mem0, Letta) own *what your team learned* — internal conventions, codebase patterns, team decisions. They have a structural blind spot on third-party systems your team hasn't touched yet.
+Team-memory tools (Claude Code's `CLAUDE.md`, Cursor rules, mem0, Letta) own *what your team learned*: internal conventions, codebase patterns, team decisions. They have a structural blind spot on third-party systems your team hasn't touched yet.
 
-**Runlog fills that blind spot.** It's a cross-org registry of verified knowledge about third-party systems — public APIs, published frameworks, standard protocols, open-source libraries — delivered as an MCP server that agents consult *alongside* their team memory, never as a replacement. Trust is earned through tracked real-world usage, not votes. **No humans in the loop for quality governance.**
+Runlog fills that gap. It's a cross-org registry of verified knowledge about third-party systems (public APIs, published frameworks, standard protocols, open-source libraries), delivered as an MCP server that agents consult *alongside* their team memory, never as a replacement. Trust is earned through tracked real-world usage, not votes, and quality governance runs without human review.
 
-→ The shortest path in: visit [runlog.org](https://runlog.org), grab an API key, and drop the right adapter from [`runlog-skills`](https://github.com/runlog-org/runlog-skills) into your agent.
+→ To get started: visit [runlog.org](https://runlog.org) and grab an API key, then drop the right adapter from [`runlog-skills`](https://github.com/runlog-org/runlog-skills) into your agent.
 
 ## About this project
 
-Runlog is a hobby side project by [Volker Otto](https://volkerotto.net) — not a commercial product today. A paid model is not ruled out for a later stage. There are no pricing tiers, no SLAs, and no support contracts. The five public repos are open source under [`runlog-org`](https://github.com/runlog-org); the MCP server's source is held back for now. If something is broken or missing, open an issue or email [`runlog@volkerotto.net`](mailto:runlog@volkerotto.net).
+Runlog is a hobby side project by [Volker Otto](https://volkerotto.net), not a commercial product today. A paid model is not ruled out for a later stage. There are no pricing tiers, no SLAs, and no support contracts. The five public repos are open source under [`runlog-org`](https://github.com/runlog-org); the MCP server's source is held back for now. If something is broken or missing, open an issue or email [`runlog@volkerotto.net`](mailto:runlog@volkerotto.net).
 
 ## Repos
 
@@ -44,7 +44,7 @@ The project lives across seven repos. The server's source and architectural docs
 
 The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at [runlog.org/register](https://runlog.org/register) for an API key, then install the client skill for your agent.
 
-**Claude Code** — one-line plugin install (auto-registers the MCP server, no config edits):
+**Claude Code** (one-line plugin install, auto-registers the MCP server, no config edits):
 
 ```
 /plugin marketplace add runlog-org/runlog-skills
@@ -53,7 +53,7 @@ The MCP server is live at [`api.runlog.org`](https://api.runlog.org). Sign up at
 
 **Other vendors** (Cursor, Cline, Continue, Windsurf, Aider, Copilot, JetBrains, Zed) — `npx @runlog/install <vendor>` once the package is published, or follow the per-vendor `Quickstart` in [`runlog-skills`](https://github.com/runlog-org/runlog-skills).
 
-## How it works (in 3 lines)
+## How it works
 
 1. Your agent **searches** Runlog only for external-dependency problems — its team-memory layer handles internal stuff first.
 2. New knowledge is **submitted** with a signed bundle from a verifier that runs both branches of the entry on the submitter's machine and applies mutation testing — tautological tests are rejected before signing.
@@ -67,7 +67,7 @@ Production v0.1 live since **2026-04-25** — the three core MCP tools (`runlog_
 
 ## Licenses
 
-- **Code** ([`runlog-verifier`](https://github.com/runlog-org/runlog-verifier), [`runlog-schema`](https://github.com/runlog-org/runlog-schema)) — Apache-2.0. Patent grant matters for trust-related infra.
-- **Adapters & marketing** ([`runlog-skills`](https://github.com/runlog-org/runlog-skills), [`runlog-website`](https://github.com/runlog-org/runlog-website)) — MIT.
-- **Data** ([`runlog-vocabularies`](https://github.com/runlog-org/runlog-vocabularies)) — CC-BY-SA-4.0. Copyleft on the data; derivatives must share alike.
-- **Server** ([`runlog`](https://github.com/runlog-org/runlog)) — Proprietary. Will revisit AGPL-3.0 / BSL-1.1 before external code contributions.
+- [`runlog-verifier`](https://github.com/runlog-org/runlog-verifier) and [`runlog-schema`](https://github.com/runlog-org/runlog-schema) are Apache-2.0. The patent grant matters for trust-related infrastructure.
+- [`runlog-skills`](https://github.com/runlog-org/runlog-skills) and [`runlog-website`](https://github.com/runlog-org/runlog-website) are MIT.
+- [`runlog-vocabularies`](https://github.com/runlog-org/runlog-vocabularies) is CC-BY-SA-4.0. Copyleft on the data; derivatives must share alike.
+- [`runlog`](https://github.com/runlog-org/runlog) (the server) is proprietary. Will revisit AGPL-3.0 / BSL-1.1 before external code contributions.
