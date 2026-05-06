@@ -1,0 +1,58 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Cross-repo Renovate preset for runlog-org. This file is dual-purpose: (a) it is the renovate.json for the .github repo itself, and (b) it serves as the org-wide shareable preset that other runlog-org repos extend via `\"extends\": [\"github>runlog-org/.github\"]`. See ./README.md for the per-repo onboarding stub.",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    "helpers:pinGitHubActionDigestsToSemver"
+  ],
+  "timezone": "UTC",
+  "schedule": ["before 06:00 on monday"],
+  "prHourlyLimit": 4,
+  "prConcurrentLimit": 8,
+  "labels": ["dependencies", "renovate"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security", "dependencies"],
+    "schedule": ["at any time"]
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 06:00 on monday"]
+  },
+  "packageRules": [
+    {
+      "description": "Group all GitHub Actions bumps into one weekly PR per repo. Reduces review overhead vs. one-PR-per-action.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github-actions",
+      "groupSlug": "github-actions",
+      "schedule": ["before 06:00 on monday"]
+    },
+    {
+      "description": "Pin third-party GitHub Actions to commit SHAs. Matches the security posture of release.yml workflows in runlog-verifier, runlog-vocabularies, runlog-skills, and runlog-website (a compromised tag on a third-party action repo can't ship malicious release logic). The pinGitHubActionDigestsToSemver helper preserves the human-readable semver in the trailing comment.",
+      "matchManagers": ["github-actions"],
+      "matchDepTypes": ["action"],
+      "pinDigests": true
+    },
+    {
+      "description": "Group npm devDependencies into one PR per repo per week. Production deps (runlog-website's runtime) still get individual PRs for traceable bisects.",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "npm-dev-dependencies"
+    },
+    {
+      "description": "Cross-repo: track runlog-schema Go-module bumps across consumers (runlog server, runlog-verifier). The `runlog-schema` label lets maintainers filter the Renovate PR stream by the upstream that triggered them.",
+      "matchPackageNames": ["github.com/runlog-org/runlog-schema"],
+      "groupName": "runlog-schema (Go)",
+      "labels": ["dependencies", "runlog-schema"]
+    },
+    {
+      "description": "Cross-repo: track runlog-schema PyPI package across Python consumers (runlog server). Active once the PyPI package ships; harmless until then (no matching deps).",
+      "matchPackageNames": ["runlog-schema"],
+      "matchManagers": ["pip_requirements", "pip_setup", "pep621"],
+      "groupName": "runlog-schema (Python)",
+      "labels": ["dependencies", "runlog-schema"]
+    }
+  ]
+}
