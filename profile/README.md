@@ -4,7 +4,6 @@
 
 **The external-dependency layer for agent memory.**
 
-[![Production Status](https://healthchecks.io/badge/f264a1fd-8117-4abc-9414-c0d1e3/-BOd40ba-2.svg)](https://api.runlog.org/health)
 [![v0.1 Live](https://img.shields.io/badge/v0.1-live-success)](https://api.runlog.org/health)
 [![MCP Compatible](https://img.shields.io/badge/MCP-compatible-purple)](https://modelcontextprotocol.io)
 [![Cross-vendor](https://img.shields.io/badge/agents-9%20vendors-blue)](https://github.com/runlog-org/runlog-skills)
