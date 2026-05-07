@@ -23,7 +23,7 @@ Runlog fills that gap. It's a cross-org registry of verified knowledge about thi
 
 ## About this project
 
-Runlog is a hobby side project by [Volker Otto](https://volkerotto.net), not a commercial product today. A paid model is not ruled out for a later stage. There are no pricing tiers, no SLAs, and no support contracts. The five public repos are open source under [`runlog-org`](https://github.com/runlog-org); the MCP server's source is held back for now. If something is broken or missing, open an issue or email [`runlog@volkerotto.net`](mailto:runlog@volkerotto.net).
+Runlog is a hobby side project by [Volker Otto](https://volkerotto.net), not a commercial product today. A paid model is not ruled out for a later stage. There are no pricing tiers, no SLAs, and no support contracts. The five public repos are open source under [`runlog-org`](https://github.com/runlog-org); the MCP server's source and the architectural docs are held back for now. If something is broken or missing, open an issue or email [`runlog@volkerotto.net`](mailto:runlog@volkerotto.net).
 
 ## Repos
 
