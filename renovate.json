@@ -42,13 +42,13 @@
       "groupName": "npm-dev-dependencies"
     },
     {
-      "description": "Cross-repo: track runlog-schema Go-module bumps across consumers (runlog server, runlog-verifier). The `runlog-schema` label lets maintainers filter the Renovate PR stream by the upstream that triggered them.",
+      "description": "Cross-repo: track runlog-schema Go-module bumps across consumers (runlog-verifier today; the runlog server consumes the PyPI package, not the Go module). The `runlog-schema` label lets maintainers filter the Renovate PR stream by the upstream that triggered them.",
       "matchPackageNames": ["github.com/runlog-org/runlog-schema"],
       "groupName": "runlog-schema (Go)",
       "labels": ["dependencies", "runlog-schema"]
     },
     {
-      "description": "Cross-repo: track runlog-schema PyPI package across Python consumers (runlog server). Active once the PyPI package ships; harmless until then (no matching deps).",
+      "description": "Cross-repo: track runlog-schema PyPI package across Python consumers (runlog server). The package is published on PyPI; the rule only fires in repos whose pyproject.toml / requirements.txt declares a `runlog-schema` dep.",
       "matchPackageNames": ["runlog-schema"],
       "matchManagers": ["pip_requirements", "pip_setup", "pep621"],
       "groupName": "runlog-schema (Python)",
